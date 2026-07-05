@@ -18,6 +18,13 @@ config/name="Tutorial"
 run/main_scene="uid://sc6emt2l6ffm"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 
+[display]
+
+window/size/resizable=false
+window/size/minimize_disabled=true
+window/size/maximize_disabled=true
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Tutorial"

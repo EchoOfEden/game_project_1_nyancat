@@ -1,12 +1,23 @@
 using Godot;
 using System;
 
+
 public partial class NyanCat : Node
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GetWindow().Unresizable = true;
+		GetNode<AnimatedSprite2D>("Background").Play();
+		GetNode<AnimatedSprite2D>("Background2").Play();
+		GetNode<AnimatedSprite2D>("Background3").Play();
+		GetNode<AnimatedSprite2D>("Background4").Play();
+		GetNode<AnimatedSprite2D>("Background5").Play();
+		GetNode<AnimatedSprite2D>("Background6").Play();
+		GetNode<AnimatedSprite2D>("Background7").Play();
+		GetNode<AnimatedSprite2D>("Background8").Play();
 	}
+
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -18,6 +29,8 @@ public partial class NyanCat : Node
 		Sprite2D ghostX = this.GetChild<Sprite2D>(1);
 		Sprite2D ghostY = this.GetChild<Sprite2D>(2);
 		Sprite2D ghostC = this.GetChild<Sprite2D>(3);
+
+		
 
 		ghostX.Visible = false;
 		ghostY.Visible = false;
@@ -87,6 +100,19 @@ public partial class NyanCat : Node
 			ghostC.Position = new Vector2 (player.Position.X - windowWidth, player.Position.Y - windowHeight);
 		}
 
+		if (Input.IsKeyPressed(Key.F11))
+		{
 
+			if (DisplayServer.WindowGetMode() != 0) 
+			{
+				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+				Console.WriteLine("Now its small");
+			}
+			else 
+			{
+				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+				Console.WriteLine("Now its big");
+			}
+		}
 	}
 }

@@ -1,31 +1,125 @@
 [gd_scene format=3 uid="uid://sc6emt2l6ffm"]
 
 [ext_resource type="Script" uid="uid://dq5lnf3s52llk" path="res://Script/NyanCat.cs" id="1_nhkr4"]
+[ext_resource type="Texture2D" uid="uid://b1n8vmn63ju3c" path="res://Sprites/Background/klatka1.png" id="2_5qxwa"]
 [ext_resource type="Texture2D" uid="uid://7xrkk257pg2s" path="res://Sprites/pngegg.png" id="2_7rqgy"]
 [ext_resource type="Script" uid="uid://dej0xbbqihrhn" path="res://Script/Sprite.cs" id="3_qxria"]
+[ext_resource type="Texture2D" uid="uid://dnnt8gwjcrun0" path="res://Sprites/Background/klatka2.png" id="3_xc4hf"]
+[ext_resource type="Texture2D" uid="uid://bvkoxaa2hc4t" path="res://Sprites/Background/klatka3.png" id="4_6rnll"]
+[ext_resource type="Texture2D" uid="uid://c36qjexm6jyh0" path="res://Sprites/Background/klatka4.png" id="5_enc0b"]
+[ext_resource type="Texture2D" uid="uid://nh67fj4bunfj" path="res://Sprites/Background/klatka5.png" id="6_hx8n4"]
+[ext_resource type="Texture2D" uid="uid://didifutviowsb" path="res://Sprites/Background/klatka6.png" id="7_i0j58"]
+[ext_resource type="Texture2D" uid="uid://cwouyutl1y2xq" path="res://Sprites/Background/klatka7.png" id="8_c1ier"]
+[ext_resource type="Texture2D" uid="uid://dbl7pi8f62n3x" path="res://Sprites/Background/klatka8.png" id="9_gyaec"]
+[ext_resource type="Texture2D" uid="uid://cpxdpn6krsacv" path="res://Sprites/Background/klatka9.png" id="10_bpy1e"]
+[ext_resource type="Texture2D" uid="uid://c67574swlaqpy" path="res://Sprites/Background/klatka10.png" id="11_p5ymy"]
+[ext_resource type="Texture2D" uid="uid://c05aas5eitanx" path="res://Sprites/Background/klatka11.png" id="12_3va76"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmecs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5qxwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xc4hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6rnll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_enc0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hx8n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i0j58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c1ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gyaec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bpy1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p5ymy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3va76")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
 [node name="NyanCat" type="Node2D" unique_id=1402727312]
 script = ExtResource("1_nhkr4")
 
 [node name="Player" type="Sprite2D" parent="." unique_id=1249727028]
+z_index = 1
 position = Vector2(563, 364)
 scale = Vector2(0.23555554, 0.23555556)
 texture = ExtResource("2_7rqgy")
 script = ExtResource("3_qxria")
 
 [node name="GhostX" type="Sprite2D" parent="." unique_id=1085527399]
+z_index = 1
 position = Vector2(884, 183)
 scale = Vector2(0.236, 0.236)
 texture = ExtResource("2_7rqgy")
 
 [node name="GhostY" type="Sprite2D" parent="." unique_id=557955721]
+z_index = 1
 position = Vector2(415, 148)
 scale = Vector2(0.236, 0.236)
 texture = ExtResource("2_7rqgy")
 
 [node name="GhostCorner" type="Sprite2D" parent="." unique_id=830156755]
+z_index = 1
 position = Vector2(512.94, 182.92801)
 scale = Vector2(0.236, 0.236)
 texture = ExtResource("2_7rqgy")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=938046317]
+[node name="Background" type="AnimatedSprite2D" parent="." unique_id=493641620]
+position = Vector2(320, 107)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.3828072
+
+[node name="Background2" type="AnimatedSprite2D" parent="." unique_id=741029254]
+position = Vector2(960, 107)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.5056765
+
+[node name="Background3" type="AnimatedSprite2D" parent="." unique_id=2100865042]
+position = Vector2(960, 321)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.5056765
+
+[node name="Background4" type="AnimatedSprite2D" parent="." unique_id=937588547]
+position = Vector2(320, 321)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.5056765
+
+[node name="Background5" type="AnimatedSprite2D" parent="." unique_id=1222760503]
+position = Vector2(320, 535)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.5056765
+
+[node name="Background6" type="AnimatedSprite2D" parent="." unique_id=1362339596]
+position = Vector2(960, 535)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.5056765
+
+[node name="Background7" type="AnimatedSprite2D" parent="." unique_id=860617848]
+position = Vector2(320, 749)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.5056765
+
+[node name="Background8" type="AnimatedSprite2D" parent="." unique_id=740236959]
+position = Vector2(960, 749)
+sprite_frames = SubResource("SpriteFrames_wmecs")
+frame_progress = 0.5056765
