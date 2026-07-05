@@ -18,21 +18,21 @@ public partial class Sprite : Sprite2D
 		float AMOUNT = 10;
 
 		//ruch
-		if (Input.IsKeyPressed(Key.W))
+		if (Input.IsKeyPressed(Key.W) || Input.IsKeyPressed(Key.Up))
 		{
 			this.Position += new Vector2(0,-AMOUNT);
 			if (this.FlipH) this.Rotation = 0.1f;
 			else this.Rotation = -0.1f;
 		}
 
-		if (Input.IsKeyPressed(Key.S))
+		if (Input.IsKeyPressed(Key.S)|| Input.IsKeyPressed(Key.Down))
 		{
 			this.Position += new Vector2(0,AMOUNT);
 			if (this.FlipH) this.Rotation = -0.1f;
 			else this.Rotation = 0.1f;
 		}
 
-		if (Input.IsKeyPressed(Key.A))
+		if (Input.IsKeyPressed(Key.A) || Input.IsKeyPressed(Key.Left))
 		{
 			if (!this.FlipH){
 				this.FlipH = true;
@@ -44,7 +44,7 @@ public partial class Sprite : Sprite2D
 			this.Skew = -0.4f;
 		}
 
-		if (Input.IsKeyPressed(Key.D))
+		if (Input.IsKeyPressed(Key.D) || Input.IsKeyPressed(Key.Right))
 		{
 			if (this.FlipH){
 				this.FlipH = false;

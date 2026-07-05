@@ -100,9 +100,18 @@ public partial class NyanCat : Node
 			ghostC.Position = new Vector2 (player.Position.X - windowWidth, player.Position.Y - windowHeight);
 		}
 
-		if (Input.IsKeyPressed(Key.F11))
-		{
+	}
 
+    public override void _Input(InputEvent @event)
+    {
+        
+		if (@event.IsActionPressed("ui_cancel"))
+		{
+			GetTree().Quit();
+		}
+
+		if (@event.IsActionPressed("ui_fullscreen"))
+		{
 			if (DisplayServer.WindowGetMode() != 0) 
 			{
 				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
@@ -114,5 +123,6 @@ public partial class NyanCat : Node
 				Console.WriteLine("Now its big");
 			}
 		}
-	}
+    }
+
 }
