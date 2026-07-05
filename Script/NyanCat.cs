@@ -115,12 +115,10 @@ public partial class NyanCat : Node
 			if (DisplayServer.WindowGetMode() != 0) 
 			{
 				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-				Console.WriteLine("Now its small");
 			}
 			else 
 			{
 				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-				Console.WriteLine("Now its big");
 			}
 		}
     }
