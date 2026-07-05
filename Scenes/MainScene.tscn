@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://sc6emt2l6ffm"]
+
+[ext_resource type="Script" uid="uid://dq5lnf3s52llk" path="res://Script/NyanCat.cs" id="1_nhkr4"]
+[ext_resource type="Texture2D" uid="uid://7xrkk257pg2s" path="res://Sprites/pngegg.png" id="2_7rqgy"]
+[ext_resource type="Script" uid="uid://dej0xbbqihrhn" path="res://Script/Sprite.cs" id="3_qxria"]
+
+[node name="NyanCat" type="Node2D" unique_id=1402727312]
+script = ExtResource("1_nhkr4")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1249727028]
+position = Vector2(563, 364)
+scale = Vector2(0.23555554, 0.23555556)
+texture = ExtResource("2_7rqgy")
+script = ExtResource("3_qxria")
+
+[node name="Ghost" type="Sprite2D" parent="." unique_id=1085527399]
+visible = false
+position = Vector2(289, 352)
+scale = Vector2(0.236, 0.236)
+texture = ExtResource("2_7rqgy")
