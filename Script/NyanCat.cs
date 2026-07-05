@@ -25,12 +25,15 @@ public partial class NyanCat : Node
 
 		ghostX.FlipH = player.FlipH;
 		ghostX.Skew = player.Skew;
+		ghostX.Rotation = player.Rotation;
 
 		ghostY.FlipH = player.FlipH;
 		ghostY.Skew = player.Skew;
+		ghostY.Rotation = player.Rotation;
 
 		ghostC.FlipH = player.FlipH;
 		ghostC.Skew = player.Skew;
+		ghostC.Rotation = player.Rotation;
 
 		double playerHeight = player.Texture.GetHeight() * 0.236;
 		double playerWidth = player.Texture.GetWidth() * 0.236;

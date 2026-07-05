@@ -12,6 +12,7 @@ public partial class Sprite : Sprite2D
 	public override void _Process(double delta)
 	{
 		this.Skew = 0;
+		this.Rotation = 0;
 		float windowWidth = (int)GetViewport().GetVisibleRect().Size.X;
 		float windowHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 		float AMOUNT = 10;
@@ -20,11 +21,15 @@ public partial class Sprite : Sprite2D
 		if (Input.IsKeyPressed(Key.W))
 		{
 			this.Position += new Vector2(0,-AMOUNT);
+			if (this.FlipH) this.Rotation = 0.1f;
+			else this.Rotation = -0.1f;
 		}
 
 		if (Input.IsKeyPressed(Key.S))
 		{
 			this.Position += new Vector2(0,AMOUNT);
+			if (this.FlipH) this.Rotation = -0.1f;
+			else this.Rotation = 0.1f;
 		}
 
 		if (Input.IsKeyPressed(Key.A))
@@ -36,7 +41,7 @@ public partial class Sprite : Sprite2D
 			
 
 			this.Position += new Vector2(-AMOUNT, 0);
-			this.Skew = -0.6f;
+			this.Skew = -0.4f;
 		}
 
 		if (Input.IsKeyPressed(Key.D))
@@ -45,7 +50,7 @@ public partial class Sprite : Sprite2D
 				this.FlipH = false;
 			}
 			this.Position += new Vector2(AMOUNT, 0);
-			this.Skew = 0.6f;
+			this.Skew = 0.4f;
 		} 
 
 
