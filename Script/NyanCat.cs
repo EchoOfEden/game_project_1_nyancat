@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Ghost : Node
+public partial class NyanCat : Node
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -15,27 +15,75 @@ public partial class Ghost : Node
 		float windowHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 
 		Sprite2D player = this.GetChild<Sprite2D>(0);
-		Sprite2D ghost = this.GetChild<Sprite2D>(1);
+		Sprite2D ghostX = this.GetChild<Sprite2D>(1);
+		Sprite2D ghostY = this.GetChild<Sprite2D>(2);
+		Sprite2D ghostC = this.GetChild<Sprite2D>(3);
 
+		ghostX.Visible = false;
+		ghostY.Visible = false;
+		ghostC.Visible = false;
 
-		if (player.Position.X < 0 )
+		ghostX.FlipH = player.FlipH;
+		ghostX.Skew = player.Skew;
+
+		ghostY.FlipH = player.FlipH;
+		ghostY.Skew = player.Skew;
+
+		ghostC.FlipH = player.FlipH;
+		ghostC.Skew = player.Skew;
+
+		double playerHeight = player.Texture.GetHeight() * 0.236;
+		double playerWidth = player.Texture.GetWidth() * 0.236;
+
+		if (player.Position.X < 0 + playerWidth/2 )
 		{
-			player.Position = new Vector2(windowWidth, player.Position.Y);
+			ghostX.Visible = true;
+			ghostX.Position = new Vector2 ( player.Position.X + windowWidth ,player.Position.Y);
 		}
-		/*
-		if (this.Position.X > windowWidth )
+
+		if (player.Position.X > windowWidth - playerWidth/2 )
 		{
-			this.Position = new Vector2(0, this.Position.Y);
+			ghostX.Visible = true;
+			ghostX.Position = new Vector2 ( player.Position.X - windowWidth ,player.Position.Y);
 		}
 
-		if (this.Position.Y < 0 )
+		if (player.Position.Y < 0 + playerHeight/2 )
 		{
-			this.Position = new Vector2(this.Position.X, windowHeight);
+			ghostY.Visible = true;
+			ghostY.Position = new Vector2 ( player.Position.X, player.Position.Y + windowHeight);
 		}
 
-		if (this.Position.Y > windowHeight )
+		if (player.Position.Y > windowHeight - playerHeight/2 )
 		{
-			this.Position = new Vector2(this.Position.X, 0);
-		}*/
+			ghostY.Visible = true;
+			ghostY.Position = new Vector2 ( player.Position.X, player.Position.Y - windowHeight);
+		}
+
+		//corner ghost
+		if (player.Position.X < 0 + playerWidth/2 && player.Position.Y < 0 + playerHeight/2)
+		{
+			ghostC.Visible = true;
+			ghostC.Position = new Vector2 (player.Position.X + windowWidth, player.Position.Y + windowHeight);
+		}
+
+		if (player.Position.X > windowWidth - playerWidth/2 && player.Position.Y < 0 + playerHeight/2)
+		{
+			ghostC.Visible = true;
+			ghostC.Position = new Vector2 (player.Position.X - windowWidth, player.Position.Y + windowHeight);
+		}
+
+		if (player.Position.X < 0 + playerWidth/2 && player.Position.Y > windowHeight - playerHeight/2)
+		{
+			ghostC.Visible = true;
+			ghostC.Position = new Vector2 (player.Position.X + windowWidth, player.Position.Y - windowHeight);
+		}
+
+		if (player.Position.X > windowWidth - playerWidth/2 && player.Position.Y > windowHeight - playerHeight/2)
+		{
+			ghostC.Visible = true;
+			ghostC.Position = new Vector2 (player.Position.X - windowWidth, player.Position.Y - windowHeight);
+		}
+
+
 	}
 }

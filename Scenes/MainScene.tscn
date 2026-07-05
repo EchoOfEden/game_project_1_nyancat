@@ -13,8 +13,17 @@ scale = Vector2(0.23555554, 0.23555556)
 texture = ExtResource("2_7rqgy")
 script = ExtResource("3_qxria")
 
-[node name="Ghost" type="Sprite2D" parent="." unique_id=1085527399]
-visible = false
-position = Vector2(289, 352)
+[node name="GhostX" type="Sprite2D" parent="." unique_id=1085527399]
+position = Vector2(884, 183)
+scale = Vector2(0.236, 0.236)
+texture = ExtResource("2_7rqgy")
+
+[node name="GhostY" type="Sprite2D" parent="." unique_id=557955721]
+position = Vector2(415, 148)
+scale = Vector2(0.236, 0.236)
+texture = ExtResource("2_7rqgy")
+
+[node name="GhostCorner" type="Sprite2D" parent="." unique_id=830156755]
+position = Vector2(512.94, 182.92801)
 scale = Vector2(0.236, 0.236)
 texture = ExtResource("2_7rqgy")
